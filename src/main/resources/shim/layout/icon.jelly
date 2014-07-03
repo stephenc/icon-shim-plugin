@@ -1,0 +1,14 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:f="/lib/form">
+  <st:documentation>
+    Generates an icon
+
+    <st:attribute name="url">
+      Used for url
+    </st:attribute>
+  </st:documentation>
+  <j:invokeStatic className="org.jenkinsci.plugins.iconshim.IconTagLibrary" method="ensureRegistered">
+    <j:arg value="${h.currentJellyContext}"/>
+  </j:invokeStatic>
+  <shim:input xmlns:shim="jelly:org.jenkinsci.plugins.iconshim.IconTagLibrary" url="${attrs.url}"/>
+</j:jelly>
